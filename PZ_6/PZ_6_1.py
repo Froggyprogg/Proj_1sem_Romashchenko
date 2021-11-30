@@ -5,18 +5,16 @@
 
 from random import randint
 a = []
-i = 1
+memory = 0
+
 
 for i in range(10):  # заполнение списка
-    a.append(randint(1, 20))
+    a.append(randint(0, 100))
 
 
-for k in range(10):  # проверка условия
+for k in range(1, 8):  # проверка условия
     if (a[k] > a[0]) and (a[k] < a[9]):
-        i = k
+        memory = k
+print(a)
 
-
-print('порядковый номер последнего из элементов удовлетворяющих неравенству = ', i)
-
-
-
+print('порядковый номер последнего из элементов удовлетворяющих неравенству = ', memory)
