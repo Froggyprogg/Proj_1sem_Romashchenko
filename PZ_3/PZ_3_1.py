@@ -4,7 +4,7 @@ a = input('Введите число')
 while a != int:  # проверка исключений
     try:
         a = int(a)
-        if (a % 2 == 0) and (a > 100) and (a < 1000):
+        if (a % 2 != 0) and (a > 100) and (a < 1000):
             print('true')
         else:
             print('false')
