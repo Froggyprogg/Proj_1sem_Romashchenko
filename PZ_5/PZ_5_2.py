@@ -12,11 +12,10 @@ def powera234(a):
     return l_step1, l_step2, l_step3, l_step4
 
 
-s = float(input('введите входное число = '))
-step1, step2, step3, step4 = float(s), float(s), float(s), float(s)
-g_step1, g_step2, g_step3, g_step4 = powera234(step1)
-
-
-print('вторая степень числа =', g_step2)
-print('третья степень числа =', g_step3)
-print('четвертая степень числа =', g_step4)
+for i in range(5):
+    s = float(input('введите входное число = '))
+    step1, step2, step3, step4 = float(s), float(s), float(s), float(s)
+    g_step1, g_step2, g_step3, g_step4 = powera234(step1)
+    print('вторая степень числа = ',g_step2 )
+    print('третья степень числа = ',g_step3 )
+    print('четвёртая степень числа = ',g_step4 )
