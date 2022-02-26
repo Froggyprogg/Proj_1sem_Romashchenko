@@ -2,9 +2,10 @@
 from string import ascii_lowercase
 
 
+def lower(crs):
+    for text in crs:
+        yield text.lower
+
+
 text = input("Введите текст")
-
-def swapcase(text):
-    yield from [text.swapcase]
-
 print(text)
