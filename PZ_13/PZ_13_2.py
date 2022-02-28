@@ -1,11 +1,10 @@
 # Составить генератор (yield), который преобразует все буквенные символы в строчные.
-from string import ascii_lowercase
 
 
-def lower(crs):
-    for text in crs:
-        yield text.lower
+def lower(text_start):
+    yield text_start.lower
 
 
-text = input("Введите текст")
-print(text)
+text_start = input("Введите текст")
+text_end = lower()
+print(text_end)
