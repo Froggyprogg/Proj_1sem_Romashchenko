@@ -4,15 +4,15 @@
 
 
 import re
-
-p = re.compile(r''/[.][xhcp])
+pattern = re.compile(r"[.](xls|xml|html|css|py)")
 
 
 with open('expansion.txt', 'r', encoding='utf-8') as file:
     text = file.read()
-    name = len(p.findall(p, text))
+    number = list(re.findall(pattern, text))
 
 
-print(name)
+print(len(number))
+
 
 
