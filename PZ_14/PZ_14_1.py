@@ -12,7 +12,4 @@ with open('expansion.txt', 'r', encoding='utf-8') as file:
     number = list(re.findall(pattern, text))
 
 
-print(len(number))
-
-
-
+print("Количество элементов = ", len(number))
