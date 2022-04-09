@@ -1,9 +1,26 @@
-# В матрице элементы кратные 3 увеличить в 3 раза.
-
-massiv_start = [[1, 2, 3, 6, 8, 9], [12, 6, 14, 15, 21, 5]]
-
-
-massiv_end = [n * 3 for n in massiv_start if (n%3==0) ]
+# Если вы видите эту надпись, значит работа не готова
+from random import randint
 
 
-print(massiv_end)
+row = int(input("Введите число строк: "))
+column = int(input("Введите число столбцов: "))
+matrix = []
+
+for i in range(row):
+   
+   for j in range(column):
+      a.append(randint(-10, 10))
+   matrix.append(a)
+
+
+print(matrix)
+
+
+def new(matrix):
+   for i in range(len(matrix)):
+      for j in range(len(matrix[i])):
+         if matrix[i][j] % 3 == 0:
+            yield matrix[i][j] * 3
+
+
+print(matrix)
