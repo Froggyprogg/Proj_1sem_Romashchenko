@@ -1,26 +1,22 @@
-# Если вы видите эту надпись, значит работа не готова
-from random import randint
+# В матрице элементы кратные трём увеличить в 3 раза
+
+from random import randint 
 
 
-row = int(input("Введите число строк: "))
-column = int(input("Введите число столбцов: "))
-matrix = []
-
-for i in range(row):
-   
-   for j in range(column):
-      a.append(randint(-10, 10))
-   matrix.append(a)
+n, m = [int(input(i)) for i in ('Введите кол-во столбцов: ', 'Введите кол-во строк:')]
+matr = [[random.randint(1, 6) for j in range(n)] for i in range(m)]
 
 
-print(matrix)
+print('Начальная матрица: ')
+for i in matr:
+    print(*i)
 
 
-def new(matrix):
-   for i in range(len(matrix)):
-      for j in range(len(matrix[i])):
-         if matrix[i][j] % 3 == 0:
-            yield matrix[i][j] * 3
-
-
-print(matrix)
+print('Измененная матрица: ')
+izm = lambda x: x % 3 == 0
+for i in matr:                                          
+    for j in i:
+        if izm(j):
+            j *= 3
+        print(j, end=' ')
+    print() 
