@@ -1,6 +1,6 @@
 # В матрице элементы кратные трём увеличить в 3 раза
 
-from random import randint 
+import random
 
 
 n, m = [int(input(i)) for i in ('Введите кол-во столбцов: ', 'Введите кол-во строк:')]

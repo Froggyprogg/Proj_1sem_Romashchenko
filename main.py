@@ -83,8 +83,8 @@ class Main(tk.Frame):
 
 
     def search_records(self, strax):
-        tarif = (strax,)
-        self.db.cur.execute("""SELECT * FROM users WHERE strax>?""", tarif)
+        strax = (strax,)
+        self.db.cur.execute("""SELECT * FROM users WHERE strax=?""", strax)
         [self.tree.delete(i) for i in self.tree.get_children()]
         [self.tree.insert('', 'end', values=row) for row in self.db.cur.fetchall()]
 
@@ -183,20 +183,23 @@ class Search(tk.Toplevel):
 
     def init_search(self):
         self.title("Поиск")
-        self.geometry("300x100+400+300")
+        self.geometry("280x100+400+300")
         self.resizable(False, False)
 
         label_search = tk.Label(self, text="Поиск")
         label_search.place(x=50, y=20)
 
+        label_desc = tk.Label(self, text="*поиск по страховой сумме равной:")
+        label_desc.place(x=50, y=45)
+
         self.entry_search = ttk.Entry(self)
         self.entry_search.place(x=105, y=20, width=150)
 
         btn_cancel = ttk.Button(self, text="Закрыть", command=self.destroy)
-        btn_cancel.place(x=185, y=50)
+        btn_cancel.place(x=185, y=70)
 
         btn_search = ttk.Button(self, text="Поиск")
-        btn_search.place(x=105, y=50)
+        btn_search.place(x=105, y=70)
         btn_search.bind('<Button-1>', lambda event: self.view.search_records(self.entry_search.get()))
         btn_search.bind('<Button-1>', lambda event: self.destroy(), add='+')
 
